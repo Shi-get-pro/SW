@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret WishList — Curated Home Finds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Manrope:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory: #FAF3EC;
+    --ivory-deep: #F3E6DC;
+    --ink: #3B2A2E;
+    --rose: #C97B84;
+    --rose-soft: #F0D7D3;
+    --sage: #8A9A7E;
+    --sage-soft: #E4E9DC;
+    --gold: #C9A660;
+    --paper: #FFFDFA;
+    --shadow: rgba(59, 42, 46, 0.12);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .handwritten{ font-family:'Caveat', cursive; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background: var(--rose-soft); }
+
+  /* ---------- NAV ---------- */
+  nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 22px 6vw;
+    position: sticky;
+    top:0;
+    background: rgba(250,243,236,0.9);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(59,42,46,0.06);
+  }
+
+  .logo{
+    font-size: 1.4rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .logo-mark{
+    width:10px; height:10px;
+    background: var(--rose);
+    border-radius: 50%;
+    display:inline-block;
+  }
+
+  .nav-links{
+    display:flex;
+    gap: 28px;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  .nav-links a{
+    position:relative;
+    padding-bottom: 3px;
+  }
+  .nav-links a:hover{ color: var(--rose); }
+
+  .nav-cta{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 9px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .nav-cta:hover{ background: var(--rose); transform: translateY(-1px); }
+
+  @media (max-width: 760px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 70px 6vw 40px;
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items:center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content:'';
+    width: 22px; height:1px;
+    background: var(--rose);
+  }
+
+  .hero h1{
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+  .hero h1 em{
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero p{
+    font-size: 1.05rem;
+    max-width: 460px;
+    color: #5c474b;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn-primary{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    display:inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px var(--shadow); }
+
+  .btn-ghost{
+    border: 1.5px solid var(--ink);
+    padding: 13px 26px;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+
+  /* ---------- MOODBOARD (signature hero visual) ---------- */
+  .moodboard{
+    position: relative;
+    height: 440px;
+  }
+
+  .pin{
+    position: absolute;
+    background: var(--paper);
+    border-radius: 6px;
+    box-shadow: 0 14px 30px var(--shadow);
+    padding: 10px;
+  }
+  .pin::after{
+    content:'';
+    position:absolute;
+    top:-10px; left:50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 46px; height: 20px;
+    background: rgba(201,166,96,0.55);
+  }
+
+  .pin-1{ top:0; left:6%; width:150px; height:170px; transform: rotate(-7deg); }
+  .pin-2{ top:40px; left:230px; width:170px; height:130px; transform: rotate(5deg); }
+  .pin-3{ top:210px; left:10%; width:160px; height:150px; transform: rotate(4deg); }
+  .pin-4{ top:240px; left:250px; width:150px; height:170px; transform: rotate(-6deg); }
+
+  .swatch{
+    width:100%; height:75%;
+    border-radius: 3px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .swatch svg{ width:46%; height:46%; opacity:0.85; }
+
+  .pin small{
+    display:block;
+    text-align:center;
+    font-family:'Caveat', cursive;
+    font-size: 1.05rem;
+    color:#5c474b;
+    margin-top: 6px;
+  }
+
+  .sw-rose{ background: var(--rose-soft); }
+  .sw-sage{ background: var(--sage-soft); }
+  .sw-gold{ background: #F2E6CE; }
+  .sw-ink{ background: var(--ivory-deep); }
+
+  @media (max-width: 900px){
+    .hero{ grid-template-columns: 1fr; }
+    .moodboard{ height: 380px; margin-top: 10px; }
+  }
+
+  /* ---------- CATEGORY STRIP ---------- */
+  .categories{
+    max-width: 1300px;
+    margin: 30px auto 90px;
+    padding: 0 6vw;
+    display:flex;
+    gap: 14px;
+    overflow-x:auto;
+    padding-bottom: 6px;
+  }
+  .category-pill{
+    flex: 0 0 auto;
+    padding: 12px 22px;
+    border-radius: 100px;
+    background: var(--paper);
+    border: 1px solid rgba(59,42,46,0.1);
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  .category-pill:hover{ background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 6vw 100px;
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom: 42px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .section-head h2{ font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .section-head .tag{
+    font-size:0.85rem; color:#7a6266; max-width:320px;
+  }
+
+  /* ---------- FEATURED PICKS — pinboard masonry ---------- */
+  .board{
+    columns: 3 260px;
+    column-gap: 22px;
+  }
+  @media (max-width: 700px){ .board{ columns: 1 260px; } }
+
+  .card{
+    break-inside: avoid;
+    background: var(--paper);
+    border-radius: 14px;
+    margin-bottom: 22px;
+    padding: 16px 16px 20px;
+    box-shadow: 0 8px 22px var(--shadow);
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover{ transform: translateY(-5px) rotate(-0.4deg); box-shadow: 0 16px 34px var(--shadow); }
+
+  .card .tape{
+    position:absolute;
+    top:-9px; right: 26px;
+    width: 50px; height: 18px;
+    background: rgba(138,154,126,0.5);
+    transform: rotate(3deg);
+    border-radius: 1px;
+  }
+
+  .card-img{
+    width:100%;
+    aspect-ratio: 4/3;
+    border-radius: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom: 14px;
+  }
+  .card-img svg{ width: 40%; height:40%; }
+
+  .card h3{
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+  }
+  .card p{
+    font-size: 0.86rem;
+    color: #6b5559;
+    margin-bottom: 12px;
+  }
+  .card-foot{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .price{
+    font-family:'Fraunces', serif;
+    font-style: italic;
+    color: var(--rose);
+    font-weight: 600;
+  }
+  .shop-link{
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .shop-link:hover{ color: var(--rose); border-color: var(--rose); }
+
+  .note{
+    font-family:'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--sage);
+    display:block;
+    margin-top: 8px;
+  }
+
+  /* ---------- JOURNAL / BLOG ---------- */
+  .journal{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 800px){ .journal{ grid-template-columns: 1fr; } }
+
+  .post{
+    background: var(--ivory-deep);
+    border-radius: 16px;
+    padding: 28px;
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+  }
+  .post .date{
+    font-size: 0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color: var(--rose);
+    font-weight:700;
+  }
+  .post h3{ font-size: 1.2rem; }
+  .post p{ font-size: 0.88rem; color:#5c474b; }
+  .post .read{
+    margin-top: auto;
+    font-size: 0.82rem;
+    font-weight:700;
+  }
+
+  /* ---------- NEWSLETTER / CTA BAND ---------- */
+  .cta-band{
+    max-width: 1300px;
+    margin: 0 auto 100px;
+    padding: 0 6vw;
+  }
+  .cta-inner{
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 24px;
+    padding: 60px 6vw;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-inner h2{ font-size: clamp(1.8rem,3.4vw,2.6rem); margin-bottom:14px; }
+  .cta-inner p{ opacity:0.75; max-width:440px; margin: 0 auto 28px; font-size:0.95rem; }
+
+  .cta-form{
+    display:flex;
+    justify-content:center;
+    gap: 10px;
+    flex-wrap:wrap;
+  }
+  .cta-form input{
+    padding: 13px 18px;
+    border-radius: 100px;
+    border: none;
+    width: 280px;
+    font-family: 'Manrope', sans-serif;
+  }
+  .cta-form button{
+    background: var(--rose);
+    color: var(--paper);
+    border:none;
+    padding: 13px 26px;
+    border-radius: 100px;
+    font-weight:700;
+    cursor:pointer;
+    transition: background 0.2s ease;
+  }
+  .cta-form button:hover{ background: var(--gold); }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding: 50px 6vw 40px;
+    border-top: 1px solid rgba(59,42,46,0.08);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .footer-links{ display:flex; gap:24px; font-size:0.86rem; }
+  .disclosure{
+    font-size: 0.74rem;
+    color: #8a7478;
+    max-width: 1300px;
+    margin: 0 auto 40px;
+    padding: 0 6vw;
+  }
+
+  @media (max-width: 600px){
+    .hero{ padding-top: 40px; }
+    .section{ padding-bottom: 70px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span class="logo-mark"></span> Secret WishList</div>
+  <div class="nav-links">
+    <a href="#picks">Featured Finds</a>
+    <a href="#categories">Categories</a>
+    <a href="#journal">Journal</a>
+  </div>
+  <a class="nav-cta" href="https://www.instagram.com/secret_.wishlist" target="_blank" rel="noopener">Follow on IG</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Curated on Amazon</div>
+    <h1>The little things that make a room feel <em>like yours.</em></h1>
+    <p>A running edit of the home & lifestyle pieces worth pinning — tested, styled, and shared one find at a time.</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="#picks">Shop the edit</a>
+      <a class="btn-ghost" href="https://www.instagram.com/secret_.wishlist" target="_blank" rel="noopener">See it on Instagram</a>
+    </div>
+  </div>
+  <div class="moodboard">
+    <div class="pin pin-1">
+      <div class="swatch sw-rose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C97B84" stroke-width="1.5"><path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/></svg>
+      </div>
+      <small>morning mug era</small>
+    </div>
+    <div class="pin pin-2">
+      <div class="swatch sw-gold">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A660" stroke-width="1.5"><path d="M6 20h5"/><path d="M8 20V10l4-6 4 6v10"/><circle cx="12" cy="9" r="1.4"/></svg>
+      </div>
+      <small>desk glow ✨</small>
+    </div>
+    <div class="pin pin-3">
+      <div class="swatch sw-sage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7E" stroke-width="1.5"><rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/></svg>
+      </div>
+      <small>soft & plush</small>
+    </div>
+    <div class="pin pin-4">
+      <div class="swatch sw-ink">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3B2A2E" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>
+      </div>
+      <small>desk edit</small>
+    </div>
+  </div>
+</section>
+
+<div id="categories" class="categories">
+  <div class="category-pill">Bedroom Edit</div>
+  <div class="category-pill">Desk & Study</div>
+  <div class="category-pill">Bath & Self-Care</div>
+  <div class="category-pill">Kitchen Corner</div>
+  <div class="category-pill">Tech Accents</div>
+  <div class="category-pill">Under ₹999</div>
+  <div class="category-pill">Gifting Edit</div>
+</div>
+
+<section id="picks" class="section">
+  <div class="section-head">
+    <h2>This week's featured picks</h2>
+    <div class="tag">The pieces currently sitting in my cart, my room, or both.</div>
+  </div>
+
+  <div class="board">
+
+    <div class="card">
+      <div class="tape"></div>
+      <div class="card-img sw-rose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C97B84" stroke-width="1.4"><path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/></svg>
+      </div>
+      <h3>Ceramic Sunrise Mug</h3>
+      <p>Textured glaze, holds heat forever, looks better empty than most mugs look full.</p>
+      <div class="card-foot">
+        <span class="price">from ₹399</span>
+        <a class="shop-link" href="#">Shop</a>
+      </div>
+      <span class="note">an everyday little joy</span>
+    </div>
+
+    <div class="card">
+      <div class="tape"></div>
+      <div class="card-img sw-sage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7E" stroke-width="1.4"><rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/></svg>
+      </div>
+      <h3>Cloud-Step Bath Mat</h3>
+      <p>Quick-dry microfiber that actually stays put. The upgrade your bathroom floor deserves.</p>
+      <div class="card-foot">
+        <span class="price">from ₹749</span>
+        <a class="shop-link" href="#">Shop</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tape"></div>
+      <div class="card-img sw-gold">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A660" stroke-width="1.4"><path d="M6 20h5"/><path d="M8 20V10l4-6 4 6v10"/><circle cx="12" cy="9" r="1.4"/></svg>
+      </div>
+      <h3>Warm-Glow Desk Lamp</h3>
+      <p>Three brightness settings, one that makes 11pm deadlines feel a little softer.</p>
+      <div class="card-foot">
+        <span class="price">from ₹1,299</span>
+        <a class="shop-link" href="#">Shop</a>
+      </div>
+      <span class="note">the one everyone asks about</span>
+    </div>
+
+    <div class="card">
+      <div class="tape"></div>
+      <div class="card-img sw-ink">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3B2A2E" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="7" r="0.6" fill="#3B2A2E"/></svg>
+      </div>
+      <h3>Woven Desk Organiser</h3>
+      <p>Hides the cable chaos. Somehow makes the whole desk look intentional.</p>
+      <div class="card-foot">
+        <span class="price">from ₹899</span>
+        <a class="shop-link" href="#">Shop</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tape"></div>
+      <div class="card-img sw-rose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C97B84" stroke-width="1.4"><path d="M4 19l6-14 6 14"/><path d="M7 13h6"/><path d="M17 19V9l4 3"/></svg>
+      </div>
+      <h3>Linen Throw, Blush</h3>
+      <p>The kind of textured weave that photographs well and feels better in person.</p>
+      <div class="card-foot">
+        <span class="price">from ₹1,599</span>
+        <a class="shop-link" href="#">Shop</a>
+      </div>
+      <span class="note">reel favourite fr</span>
+    </div>
+
+    <div class="card">
+      <div class="tape"></div>
+      <div class="card-img sw-sage">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7E" stroke-width="1.4"><path d="M12 2v6"/><path d="M12 22v-6"/><circle cx="12" cy="12" r="4"/></svg>
+      </div>
+      <h3>Terrazzo Trinket Dish</h3>
+      <p>For the rings, the hairpins, the little things that need one home.</p>
+      <div class="card-foot">
+        <span class="price">from ₹449</span>
+        <a class="shop-link" href="#">Shop</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="journal" class="section">
+  <div class="section-head">
+    <h2>From the journal</h2>
+    <div class="tag">Longer notes on the finds, the fails, and the everyday styling.</div>
+  </div>
+  <div class="journal">
+    <div class="post">
+      <span class="date">Latest</span>
+      <h3>5 desk pieces under ₹1,000 that don't look like it</h3>
+      <p>A round-up of the small upgrades that quietly changed how my workspace feels.</p>
+      <a class="read" href="#">Read the edit →</a>
+    </div>
+    <div class="post">
+      <span class="date">Reader favourite</span>
+      <h3>How I actually style a rented room</h3>
+      <p>No drilling, no repainting — just the layering tricks that make a space feel finished.</p>
+      <a class="read" href="#">Read the edit →</a>
+    </div>
+    <div class="post">
+      <span class="date">Seasonal</span>
+      <h3>The monsoon home refresh checklist</h3>
+      <p>Small swaps for the bathroom, the entryway, and the kitchen corner that gets damp first.</p>
+      <a class="read" href="#">Read the edit →</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2>Never miss a find</h2>
+    <p>One short note whenever something genuinely good gets added to the list. No spam, no daily noise.</p>
+    <form class="cta-form" onsubmit="return false;">
+      <input type="email" placeholder="you@example.com" required>
+      <button type="submit">Join the list</button>
+    </form>
+  </div>
+</div>
+
+<p class="disclosure">As an Amazon Associate, this site may earn from qualifying purchases made through the links above, at no extra cost to you. Every piece featured here is genuinely chosen and used before it's shared.</p>
+
+<footer>
+  <div class="logo"><span class="logo-mark"></span> Secret WishList</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/secret_.wishlist" target="_blank" rel="noopener">Instagram</a>
+    <a href="#">Collab with us</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+</body>
+</html>
