@@ -495,13 +495,7 @@
 </section>
 
 <div id="categories" class="categories">
-  <div class="category-pill active" data-cat="all">All</div>
-  <div class="category-pill" data-cat="Bedroom Edit">Bedroom Edit</div>
-  <div class="category-pill" data-cat="Desk &amp; Study">Desk &amp; Study</div>
-  <div class="category-pill" data-cat="Bath &amp; Self-Care">Bath &amp; Self-Care</div>
-  <div class="category-pill" data-cat="Kitchen Corner">Kitchen Corner</div>
-  <div class="category-pill" data-cat="Tech Accents">Tech Accents</div>
-  <div class="category-pill" data-cat="Gifting Edit">Gifting Edit</div>
+  <p style="color:#8a7478; font-size:0.85rem; padding: 12px 0;">Loading categories...</p>
 </div>
 
 <section id="picks" class="section">
@@ -616,26 +610,36 @@
     }).join('');
   }
 
+  function renderCategories(){
+    const container = document.getElementById('categories');
+    const cats = [...new Set(allProducts.map(p => (p.category || '').trim()).filter(Boolean))];
+
+    let html = `<div class="category-pill active" data-cat="all">All</div>`;
+    html += cats.map(c => `<div class="category-pill" data-cat="${c}">${c}</div>`).join('');
+    container.innerHTML = html;
+
+    document.querySelectorAll('.category-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        renderProducts(pill.dataset.cat);
+      });
+    });
+  }
+
   Papa.parse(SHEET_CSV_URL, {
     download: true,
     header: true,
     skipEmptyLines: true,
     complete: (results) => {
       allProducts = results.data.filter(p => p.name);
+      renderCategories();
       renderProducts('all');
     },
     error: () => {
       document.getElementById('product-board').innerHTML =
         "<p style=\"color:#8a7478; font-size:0.9rem;\">Couldn't load the product sheet — check the Sheet is set to \"Anyone with the link can view.\"</p>";
     }
-  });
-
-  document.querySelectorAll('.category-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      renderProducts(pill.dataset.cat);
-    });
   });
 </script>
 
