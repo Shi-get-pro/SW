@@ -1,20 +1,68 @@
 [
   {
-    "name": "Handmade Ceramic Mug 3D",
-    "description": "Daisy Flower Design Coffee Tea Cup 240 ml Gift for Coffee Lovers Kitchen Decor (Pink/Light Blue/Yellow/Grey) (Creamish Yellow/Off-White)",
-    "link": "https://amzn.to/4gfANzn#",
+    "name": "Ceramic Sunrise Mug",
+    "description": "Textured glaze, holds heat forever, looks better empty than most mugs look full.",
+    "price": "₹399",
+    "link": "#",
     "category": "Kitchen Corner",
     "note": "an everyday little joy",
     "icon": "mug",
     "swatch": "sw-rose",
-  }
-  {
-    "name": "Pink Daisy Mug",
-    "description": " Ceramic Mug Set of 1, 200 Ml | Microwave Safe | Unique Gift for Tea Coffee Lovers | Ideal for Home & Office | Perfect for Coffee Tea Milk",
-    "link": "https://amzn.to/4eD5Y6D",
-    "category": "Kitchen Corner",
-    "note": "an everyday little joy",
-    "icon": "mug",
-    "swatch": "sw-rose",
+    "image": ""
   },
+  {
+    "name": "Cloud-Step Bath Mat",
+    "description": "Quick-dry microfiber that actually stays put. The upgrade your bathroom floor deserves.",
+    "price": "₹749",
+    "link": "#",
+    "category": "Bath & Self-Care",
+    "note": "",
+    "icon": "mat",
+    "swatch": "sw-sage",
+    "image": ""
+  },
+  {
+    "name": "Warm-Glow Desk Lamp",
+    "description": "Three brightness settings, one that makes 11pm deadlines feel a little softer.",
+    "price": "₹1,299",
+    "link": "#",
+    "category": "Desk & Study",
+    "note": "the one everyone asks about",
+    "icon": "lamp",
+    "swatch": "sw-gold",
+    "image": ""
+  },
+  {
+    "name": "Woven Desk Organiser",
+    "description": "Hides the cable chaos. Somehow makes the whole desk look intentional.",
+    "price": "₹899",
+    "link": "#",
+    "category": "Desk & Study",
+    "note": "",
+    "icon": "organiser",
+    "swatch": "sw-ink",
+    "image": ""
+  },
+  {
+    "name": "Linen Throw, Blush",
+    "description": "The kind of textured weave that photographs well and feels better in person.",
+    "price": "₹1,599",
+    "link": "#",
+    "category": "Bedroom Edit",
+    "note": "reel favourite fr",
+    "icon": "throw",
+    "swatch": "sw-rose",
+    "image": ""
+  },
+  {
+    "name": "Terrazzo Trinket Dish",
+    "description": "For the rings, the hairpins, the little things that need one home.",
+    "price": "₹449",
+    "link": "#",
+    "category": "Bedroom Edit",
+    "note": "",
+    "icon": "dish",
+    "swatch": "sw-sage",
+    "image": ""
+  }
 ]
