@@ -513,6 +513,8 @@
   <div class="board" id="product-board">
     <p style="color:#8a7478; font-size:0.9rem;">Loading finds...</p>
   </div>
+</section>
+
 <section id="journal" class="section">
   <div class="section-head">
     <h2>From the journal</h2>
@@ -562,7 +564,10 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
+  const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRZ_JklenKVGAJ44RAE9Xu9-LFF7uxaDsYVy_TeOpb6hKI8jPyH0Bj2bOBsXmU2Bs6CTCylfC7dKcJ3/pub?gid=0&single=true&output=csv';
+
   const ICONS = {
     mug: '<path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/>',
     mat: '<rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/>',
@@ -584,7 +589,7 @@
     const list = filter === 'all' ? allProducts : allProducts.filter(p => p.category === filter);
 
     if(list.length === 0){
-      board.innerHTML = '<p style="color:#8a7478; font-size:0.9rem;">No finds in this category yet — check back soon.</p>';
+      board.innerHTML = "<p style=\"color:#8a7478; font-size:0.9rem;\">No finds in this category yet — check back soon.</p>";
       return;
     }
 
@@ -611,16 +616,19 @@
     }).join('');
   }
 
-  fetch('products.json')
-    .then(res => res.json())
-    .then(data => {
-      allProducts = data;
+  Papa.parse(SHEET_CSV_URL, {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: (results) => {
+      allProducts = results.data.filter(p => p.name);
       renderProducts('all');
-    })
-    .catch(() => {
+    },
+    error: () => {
       document.getElementById('product-board').innerHTML =
-        "<p style=\"color:#8a7478; font-size:0.9rem;\">Couldn't load products.json — make sure it's in the same folder as this page.</p>";
-    });
+        "<p style=\"color:#8a7478; font-size:0.9rem;\">Couldn't load the product sheet — check the Sheet is set to \"Anyone with the link can view.\"</p>";
+    }
+  });
 
   document.querySelectorAll('.category-pill').forEach(pill => {
     pill.addEventListener('click', () => {
