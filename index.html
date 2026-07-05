@@ -300,6 +300,11 @@
     margin-bottom: 14px;
   }
   .card-img svg{ width: 40%; height:40%; }
+  .card-img-photo{
+    background-size: cover;
+    background-position: center;
+    background-color: var(--ivory-deep);
+  }
 
   .card h3{
     font-size: 1.08rem;
@@ -588,12 +593,13 @@
       const stroke = STROKE[swatch] || '#C97B84';
       const iconPath = ICONS[p.icon] || ICONS.default;
       const note = p.note ? `<span class="note">${p.note}</span>` : '';
+      const imgBlock = p.image
+        ? `<div class="card-img card-img-photo" style="background-image:url('${p.image}')"></div>`
+        : `<div class="card-img ${swatch}"><svg viewBox="0 0 24 24" fill="none" stroke="${stroke}" stroke-width="1.4">${iconPath}</svg></div>`;
       return `
         <div class="card">
           <div class="tape"></div>
-          <div class="card-img ${swatch}">
-            <svg viewBox="0 0 24 24" fill="none" stroke="${stroke}" stroke-width="1.4">${iconPath}</svg>
-          </div>
+          ${imgBlock}
           <h3>${p.name}</h3>
           <p>${p.description}</p>
           <div class="card-foot">

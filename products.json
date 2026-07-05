@@ -7,7 +7,8 @@
     "category": "Kitchen Corner",
     "note": "an everyday little joy",
     "icon": "mug",
-    "swatch": "sw-rose"
+    "swatch": "sw-rose",
+    "image": ""
   },
   {
     "name": "Cloud-Step Bath Mat",
@@ -17,7 +18,8 @@
     "category": "Bath & Self-Care",
     "note": "",
     "icon": "mat",
-    "swatch": "sw-sage"
+    "swatch": "sw-sage",
+    "image": ""
   },
   {
     "name": "Warm-Glow Desk Lamp",
@@ -27,7 +29,8 @@
     "category": "Desk & Study",
     "note": "the one everyone asks about",
     "icon": "lamp",
-    "swatch": "sw-gold"
+    "swatch": "sw-gold",
+    "image": ""
   },
   {
     "name": "Woven Desk Organiser",
@@ -37,7 +40,8 @@
     "category": "Desk & Study",
     "note": "",
     "icon": "organiser",
-    "swatch": "sw-ink"
+    "swatch": "sw-ink",
+    "image": ""
   },
   {
     "name": "Linen Throw, Blush",
@@ -47,7 +51,8 @@
     "category": "Bedroom Edit",
     "note": "reel favourite fr",
     "icon": "throw",
-    "swatch": "sw-rose"
+    "swatch": "sw-rose",
+    "image": ""
   },
   {
     "name": "Terrazzo Trinket Dish",
@@ -57,6 +62,7 @@
     "category": "Bedroom Edit",
     "note": "",
     "icon": "dish",
-    "swatch": "sw-sage"
+    "swatch": "sw-sage",
+    "image": ""
   }
 ]
