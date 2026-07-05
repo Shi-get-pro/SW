@@ -241,6 +241,7 @@
     transition: all 0.2s ease;
   }
   .category-pill:hover{ background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .category-pill.active{ background: var(--rose); color: var(--paper); border-color: var(--rose); }
 
   /* ---------- SECTION HEADERS ---------- */
   .section{
@@ -489,13 +490,13 @@
 </section>
 
 <div id="categories" class="categories">
-  <div class="category-pill">Bedroom Edit</div>
-  <div class="category-pill">Desk & Study</div>
-  <div class="category-pill">Bath & Self-Care</div>
-  <div class="category-pill">Kitchen Corner</div>
-  <div class="category-pill">Tech Accents</div>
-  <div class="category-pill">Under ₹999</div>
-  <div class="category-pill">Gifting Edit</div>
+  <div class="category-pill active" data-cat="all">All</div>
+  <div class="category-pill" data-cat="Bedroom Edit">Bedroom Edit</div>
+  <div class="category-pill" data-cat="Desk &amp; Study">Desk &amp; Study</div>
+  <div class="category-pill" data-cat="Bath &amp; Self-Care">Bath &amp; Self-Care</div>
+  <div class="category-pill" data-cat="Kitchen Corner">Kitchen Corner</div>
+  <div class="category-pill" data-cat="Tech Accents">Tech Accents</div>
+  <div class="category-pill" data-cat="Gifting Edit">Gifting Edit</div>
 </div>
 
 <section id="picks" class="section">
@@ -504,92 +505,9 @@
     <div class="tag">The pieces currently sitting in my cart, my room, or both.</div>
   </div>
 
-  <div class="board">
-
-    <div class="card">
-      <div class="tape"></div>
-      <div class="card-img sw-rose">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C97B84" stroke-width="1.4"><path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/></svg>
-      </div>
-      <h3>Ceramic Sunrise Mug</h3>
-      <p>Textured glaze, holds heat forever, looks better empty than most mugs look full.</p>
-      <div class="card-foot">
-        <span class="price">from ₹399</span>
-        <a class="shop-link" href="#">Shop</a>
-      </div>
-      <span class="note">an everyday little joy</span>
-    </div>
-
-    <div class="card">
-      <div class="tape"></div>
-      <div class="card-img sw-sage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7E" stroke-width="1.4"><rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/></svg>
-      </div>
-      <h3>Cloud-Step Bath Mat</h3>
-      <p>Quick-dry microfiber that actually stays put. The upgrade your bathroom floor deserves.</p>
-      <div class="card-foot">
-        <span class="price">from ₹749</span>
-        <a class="shop-link" href="#">Shop</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="tape"></div>
-      <div class="card-img sw-gold">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A660" stroke-width="1.4"><path d="M6 20h5"/><path d="M8 20V10l4-6 4 6v10"/><circle cx="12" cy="9" r="1.4"/></svg>
-      </div>
-      <h3>Warm-Glow Desk Lamp</h3>
-      <p>Three brightness settings, one that makes 11pm deadlines feel a little softer.</p>
-      <div class="card-foot">
-        <span class="price">from ₹1,299</span>
-        <a class="shop-link" href="#">Shop</a>
-      </div>
-      <span class="note">the one everyone asks about</span>
-    </div>
-
-    <div class="card">
-      <div class="tape"></div>
-      <div class="card-img sw-ink">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#3B2A2E" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="7" r="0.6" fill="#3B2A2E"/></svg>
-      </div>
-      <h3>Woven Desk Organiser</h3>
-      <p>Hides the cable chaos. Somehow makes the whole desk look intentional.</p>
-      <div class="card-foot">
-        <span class="price">from ₹899</span>
-        <a class="shop-link" href="#">Shop</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="tape"></div>
-      <div class="card-img sw-rose">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C97B84" stroke-width="1.4"><path d="M4 19l6-14 6 14"/><path d="M7 13h6"/><path d="M17 19V9l4 3"/></svg>
-      </div>
-      <h3>Linen Throw, Blush</h3>
-      <p>The kind of textured weave that photographs well and feels better in person.</p>
-      <div class="card-foot">
-        <span class="price">from ₹1,599</span>
-        <a class="shop-link" href="#">Shop</a>
-      </div>
-      <span class="note">reel favourite fr</span>
-    </div>
-
-    <div class="card">
-      <div class="tape"></div>
-      <div class="card-img sw-sage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7E" stroke-width="1.4"><path d="M12 2v6"/><path d="M12 22v-6"/><circle cx="12" cy="12" r="4"/></svg>
-      </div>
-      <h3>Terrazzo Trinket Dish</h3>
-      <p>For the rings, the hairpins, the little things that need one home.</p>
-      <div class="card-foot">
-        <span class="price">from ₹449</span>
-        <a class="shop-link" href="#">Shop</a>
-      </div>
-    </div>
-
+  <div class="board" id="product-board">
+    <p style="color:#8a7478; font-size:0.9rem;">Loading finds...</p>
   </div>
-</section>
-
 <section id="journal" class="section">
   <div class="section-head">
     <h2>From the journal</h2>
@@ -638,6 +556,74 @@
     <a href="#">Privacy</a>
   </div>
 </footer>
+
+<script>
+  const ICONS = {
+    mug: '<path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/>',
+    mat: '<rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/>',
+    lamp: '<path d="M6 20h5"/><path d="M8 20V10l4-6 4 6v10"/><circle cx="12" cy="9" r="1.4"/>',
+    organiser: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="7" r="0.6" fill="currentColor"/>',
+    throw: '<path d="M4 19l6-14 6 14"/><path d="M7 13h6"/><path d="M17 19V9l4 3"/>',
+    dish: '<path d="M12 2v6"/><path d="M12 22v-6"/><circle cx="12" cy="12" r="4"/>',
+    default: '<circle cx="12" cy="12" r="8"/>'
+  };
+
+  const STROKE = {
+    'sw-rose': '#C97B84', 'sw-sage': '#8A9A7E', 'sw-gold': '#C9A660', 'sw-ink': '#3B2A2E'
+  };
+
+  let allProducts = [];
+
+  function renderProducts(filter){
+    const board = document.getElementById('product-board');
+    const list = filter === 'all' ? allProducts : allProducts.filter(p => p.category === filter);
+
+    if(list.length === 0){
+      board.innerHTML = '<p style="color:#8a7478; font-size:0.9rem;">No finds in this category yet — check back soon.</p>';
+      return;
+    }
+
+    board.innerHTML = list.map(p => {
+      const swatch = p.swatch || 'sw-rose';
+      const stroke = STROKE[swatch] || '#C97B84';
+      const iconPath = ICONS[p.icon] || ICONS.default;
+      const note = p.note ? `<span class="note">${p.note}</span>` : '';
+      return `
+        <div class="card">
+          <div class="tape"></div>
+          <div class="card-img ${swatch}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="${stroke}" stroke-width="1.4">${iconPath}</svg>
+          </div>
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <div class="card-foot">
+            <span class="price">from ${p.price}</span>
+            <a class="shop-link" href="${p.link}" target="_blank" rel="noopener sponsored">Shop</a>
+          </div>
+          ${note}
+        </div>`;
+    }).join('');
+  }
+
+  fetch('products.json')
+    .then(res => res.json())
+    .then(data => {
+      allProducts = data;
+      renderProducts('all');
+    })
+    .catch(() => {
+      document.getElementById('product-board').innerHTML =
+        '<p style="color:#8a7478; font-size:0.9rem;">Couldn\\'t load products.json — make sure it\\'s in the same folder as this page.</p>';
+    });
+
+  document.querySelectorAll('.category-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      renderProducts(pill.dataset.cat);
+    });
+  });
+</script>
 
 </body>
 </html>

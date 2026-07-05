@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ceramic Sunrise Mug",
+    "description": "Textured glaze, holds heat forever, looks better empty than most mugs look full.",
+    "price": "₹399",
+    "link": "#",
+    "category": "Kitchen Corner",
+    "note": "an everyday little joy",
+    "icon": "mug",
+    "swatch": "sw-rose"
+  },
+  {
+    "name": "Cloud-Step Bath Mat",
+    "description": "Quick-dry microfiber that actually stays put. The upgrade your bathroom floor deserves.",
+    "price": "₹749",
+    "link": "#",
+    "category": "Bath & Self-Care",
+    "note": "",
+    "icon": "mat",
+    "swatch": "sw-sage"
+  },
+  {
+    "name": "Warm-Glow Desk Lamp",
+    "description": "Three brightness settings, one that makes 11pm deadlines feel a little softer.",
+    "price": "₹1,299",
+    "link": "#",
+    "category": "Desk & Study",
+    "note": "the one everyone asks about",
+    "icon": "lamp",
+    "swatch": "sw-gold"
+  },
+  {
+    "name": "Woven Desk Organiser",
+    "description": "Hides the cable chaos. Somehow makes the whole desk look intentional.",
+    "price": "₹899",
+    "link": "#",
+    "category": "Desk & Study",
+    "note": "",
+    "icon": "organiser",
+    "swatch": "sw-ink"
+  },
+  {
+    "name": "Linen Throw, Blush",
+    "description": "The kind of textured weave that photographs well and feels better in person.",
+    "price": "₹1,599",
+    "link": "#",
+    "category": "Bedroom Edit",
+    "note": "reel favourite fr",
+    "icon": "throw",
+    "swatch": "sw-rose"
+  },
+  {
+    "name": "Terrazzo Trinket Dish",
+    "description": "For the rings, the hairpins, the little things that need one home.",
+    "price": "₹449",
+    "link": "#",
+    "category": "Bedroom Edit",
+    "note": "",
+    "icon": "dish",
+    "swatch": "sw-sage"
+  }
+]
