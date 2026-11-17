@@ -3,645 +3,563 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Secret WishList — Curated Home Finds</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Manrope:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<title>Mary Shirly | Digital Transformation &amp; AI Leader</title>
+<meta name="description" content="Mary Shirly – Digital Transformation &amp; AI Leader. Associate Director, Business Technology &amp; AI at Verizon Business, Chennai. Leading enterprise AI, digital transformation and customer experience at scale.">
+<meta property="og:title" content="Mary Shirly | Digital Transformation &amp; AI Leader">
+<meta property="og:description" content="Associate Director, Business Technology &amp; AI at Verizon Business. 87% AI bot containment, Top2 CSAT 73% to 81.2%, 14 Product Owners led.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ivory: #FAF3EC;
-    --ivory-deep: #F3E6DC;
-    --ink: #3B2A2E;
-    --rose: #C97B84;
-    --rose-soft: #F0D7D3;
-    --sage: #8A9A7E;
-    --sage-soft: #E4E9DC;
-    --gold: #C9A660;
-    --paper: #FFFDFA;
-    --shadow: rgba(59, 42, 46, 0.12);
+  :root {
+    --ink: #0f0f0f;
+    --paper: #faf9f7;
+    --muted: #6b6b6b;
+    --accent: #c25b2e;
+    --accent-light: #f5ebe5;
+    --gold: #b8973a;
+    --border: #e2ddd8;
+    --card: #ffffff;
+    --nav-h: 64px;
   }
 
-  *{ box-sizing:border-box; margin:0; padding:0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body{
-    background: var(--ivory);
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
     color: var(--ink);
-    font-family: 'Manrope', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
   }
 
-  h1,h2,h3,.display{
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    height: var(--nav-h);
+    background: rgba(250,249,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: white;
+    padding: 0.5rem 1.25rem; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* SECTIONS */
+  section { padding: 6rem 10% 4rem; }
+  section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
   }
 
-  .handwritten{ font-family:'Caveat', cursive; }
-
-  a{ color:inherit; text-decoration:none; }
-
-  ::selection{ background: var(--rose-soft); }
-
-  /* ---------- NAV ---------- */
-  nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding: 22px 6vw;
-    position: sticky;
-    top:0;
-    background: rgba(250,243,236,0.9);
-    backdrop-filter: blur(8px);
-    z-index: 100;
-    border-bottom: 1px solid rgba(59,42,46,0.06);
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900; line-height: 1.05;
+    letter-spacing: -0.03em; color: var(--ink);
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700; letter-spacing: -0.02em; color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 600; color: var(--ink);
   }
 
-  .logo{
-    font-size: 1.4rem;
-    display:flex;
-    align-items:center;
-    gap:8px;
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 4rem;
+    padding-top: calc(var(--nav-h) + 5rem);
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent-light); color: var(--accent);
+    padding: 0.35rem 0.85rem; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 600; margin-bottom: 1.5rem;
+  }
+  .hero-tag::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero-title { margin-bottom: 1.5rem; }
+  .hero-title em {
+    font-style: normal; color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--muted); max-width: 500px;
+    line-height: 1.7; margin-bottom: 2rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink); color: white;
+    padding: 0.75rem 1.75rem; border-radius: 100px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    border: 1.5px solid var(--border); color: var(--ink);
+    padding: 0.75rem 1.75rem; border-radius: 100px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: border-color 0.2s;
+    cursor: pointer; background: transparent; font-family: inherit;
+  }
+  .btn-outline:hover { border-color: var(--ink); }
+
+  /* HERO STATS CARD */
+  .hero-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+  }
+  .hero-card-label {
+    font-size: 0.78rem; color: var(--muted); font-weight: 500; margin-bottom: 1.5rem;
+    font-family: 'DM Mono', monospace; letter-spacing: 0.05em;
+  }
+  .achievement-para {
+    font-size: 0.92rem; color: var(--muted); line-height: 1.9;
+  }
+  .achievement-para strong { color: var(--ink); }
+  .hero-quote {
+    margin-top: 2rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: var(--muted); font-style: italic; line-height: 1.6;
+  }
+  .hero-quote strong { color: var(--ink); font-style: normal; }
+
+  /* STATS BAR */
+  #stats { padding: 0 10% 4rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+  .stat-label { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+
+  .focus-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+  .focus-proof { font-size: 0.85rem; color: var(--ink); border-top: 1px solid var(--border); padding-top: 0.75rem; }
+  .earlier { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 0.5rem; }
+  .earlier-item { border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; background: white; }
+  .earlier-item .tl-company { margin-bottom: 0.15rem; }
+  .earlier-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-top: 0.4rem; }
+  @media (max-width: 900px) { .earlier { grid-template-columns: 1fr; } }
+
+  /* ABOUT */
+  #about { background: var(--ink); color: white; }
+  #about .eyebrow { color: var(--gold); }
+  #about h2 { color: white; }
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+  .about-body { font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.8); }
+  .about-body p { margin-bottom: 1.25rem; }
+  .about-body strong { color: white; }
+  .philosophy-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .phil-card {
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 1.25rem 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .phil-card:hover { border-color: var(--gold); }
+  .phil-title { font-weight: 600; color: white; margin-bottom: 0.3rem; font-size: 0.9rem; }
+  .phil-desc { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  /* EXPERIENCE */
+  #experience { background: var(--paper); }
+  .timeline { position: relative; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .tl-item { padding-left: 2.5rem; margin-bottom: 3rem; position: relative; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -5px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--paper);
+  }
+  .tl-company {
+    font-size: 0.75rem; font-weight: 600; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem;
+  }
+  .tl-role { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+  .tl-dates { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; font-family: 'DM Mono', monospace; }
+  .tl-bullets { list-style: none; }
+  .tl-bullets li {
+    font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border); line-height: 1.5;
+  }
+  .tl-bullets li::before { content: '→ '; color: var(--accent); font-weight: 600; }
+  .tl-bullets li strong { color: var(--ink); }
+
+  /* SKILLS */
+  #skills { background: var(--paper); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .skill-group {
+    background: white; border-radius: 16px;
+    padding: 1.75rem; border: 1px solid var(--border);
+  }
+  .skill-group-title {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent); font-weight: 600; margin-bottom: 1rem;
+    font-family: 'DM Mono', monospace;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag {
+    background: var(--accent-light); color: var(--accent);
+    padding: 0.3rem 0.75rem; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 500;
+  }
+  .cert-list { list-style: none; }
+  .cert-list li {
+    font-size: 0.85rem; color: var(--muted); padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border); line-height: 1.4;
+  }
+  .cert-list li:last-child { border-bottom: none; }
+  .cert-list li::before { content: '✓ '; color: var(--gold); font-weight: 700; }
+
+  /* CONTACT */
+  #contact { background: var(--paper); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-info p { font-size: 1rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; text-decoration: none; color: var(--ink);
+    font-size: 0.9rem; font-weight: 500; transition: border-color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+  .contact-link-icon { font-size: 1.2rem; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+  .form-input, .form-textarea {
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 10px; padding: 0.75rem 1rem;
+    font-size: 0.9rem; font-family: 'DM Sans', sans-serif;
+    outline: none; transition: border-color 0.2s; color: var(--ink);
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+  .form-textarea { min-height: 120px; resize: vertical; }
+  .form-btn {
+    background: var(--accent); color: white;
+    border: none; border-radius: 100px; padding: 0.85rem 2rem;
+    font-size: 0.9rem; font-weight: 700; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; align-self: flex-start;
+    transition: opacity 0.2s;
+  }
+  .form-btn:hover { opacity: 0.85; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.4);
+    text-align: center; padding: 2rem;
+    font-size: 0.8rem; font-family: 'DM Mono', monospace;
+  }
+  footer strong { color: white; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    section { padding: 4rem 6% 3rem; }
+    #hero { grid-template-columns: 1fr; min-height: auto; padding-top: calc(var(--nav-h) + 3rem); }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    #stats { padding: 0 6% 3rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .builder-controls { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    h1 { font-size: 2.4rem; }
   }
 
-  .logo-mark{
-    width:10px; height:10px;
-    background: var(--rose);
-    border-radius: 50%;
-    display:inline-block;
-  }
-
-  .nav-links{
-    display:flex;
-    gap: 28px;
-    font-size: 0.92rem;
-    font-weight: 500;
-  }
-
-  .nav-links a{
-    position:relative;
-    padding-bottom: 3px;
-  }
-  .nav-links a:hover{ color: var(--rose); }
-
-  .nav-cta{
-    background: var(--ink);
-    color: var(--paper);
-    padding: 9px 20px;
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-  .nav-cta:hover{ background: var(--rose); transform: translateY(-1px); }
-
-  @media (max-width: 760px){
-    .nav-links{ display:none; }
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding: 70px 6vw 40px;
-    display:grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 40px;
-    align-items:center;
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--rose);
-    font-weight: 700;
-    margin-bottom: 18px;
-  }
-  .eyebrow::before{
-    content:'';
-    width: 22px; height:1px;
-    background: var(--rose);
-  }
-
-  .hero h1{
-    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
-    line-height: 1.08;
-    margin-bottom: 20px;
-  }
-  .hero h1 em{
-    font-style: italic;
-    color: var(--rose);
-  }
-
-  .hero p{
-    font-size: 1.05rem;
-    max-width: 460px;
-    color: #5c474b;
-    margin-bottom: 30px;
-  }
-
-  .hero-buttons{ display:flex; gap:14px; flex-wrap:wrap; }
-
-  .btn-primary{
-    background: var(--ink);
-    color: var(--paper);
-    padding: 14px 28px;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 0.92rem;
-    display:inline-block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px var(--shadow); }
-
-  .btn-ghost{
-    border: 1.5px solid var(--ink);
-    padding: 13px 26px;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 0.92rem;
-  }
-  .btn-ghost:hover{ background: var(--ink); color: var(--paper); }
-
-  /* ---------- MOODBOARD (signature hero visual) ---------- */
-  .moodboard{
-    position: relative;
-    height: 440px;
-  }
-
-  .pin{
-    position: absolute;
-    background: var(--paper);
-    border-radius: 6px;
-    box-shadow: 0 14px 30px var(--shadow);
-    padding: 10px;
-  }
-  .pin::after{
-    content:'';
-    position:absolute;
-    top:-10px; left:50%;
-    transform: translateX(-50%) rotate(-4deg);
-    width: 46px; height: 20px;
-    background: rgba(201,166,96,0.55);
-  }
-
-  .pin-1{ top:0; left:6%; width:150px; height:170px; transform: rotate(-7deg); }
-  .pin-2{ top:40px; left:230px; width:170px; height:130px; transform: rotate(5deg); }
-  .pin-3{ top:210px; left:10%; width:160px; height:150px; transform: rotate(4deg); }
-  .pin-4{ top:240px; left:250px; width:150px; height:170px; transform: rotate(-6deg); }
-
-  .swatch{
-    width:100%; height:75%;
-    border-radius: 3px;
-    display:flex; align-items:center; justify-content:center;
-  }
-  .swatch svg{ width:46%; height:46%; opacity:0.85; }
-
-  .pin small{
-    display:block;
-    text-align:center;
-    font-family:'Caveat', cursive;
-    font-size: 1.05rem;
-    color:#5c474b;
-    margin-top: 6px;
-  }
-
-  .sw-rose{ background: var(--rose-soft); }
-  .sw-sage{ background: var(--sage-soft); }
-  .sw-gold{ background: #F2E6CE; }
-  .sw-ink{ background: var(--ivory-deep); }
-
-  @media (max-width: 900px){
-    .hero{ grid-template-columns: 1fr; }
-    .moodboard{ height: 380px; margin-top: 10px; }
-  }
-
-  /* ---------- CATEGORY STRIP ---------- */
-  .categories{
-    max-width: 1300px;
-    margin: 30px auto 90px;
-    padding: 0 6vw;
-    display:flex;
-    gap: 14px;
-    overflow-x:auto;
-    padding-bottom: 6px;
-  }
-  .category-pill{
-    flex: 0 0 auto;
-    padding: 12px 22px;
-    border-radius: 100px;
-    background: var(--paper);
-    border: 1px solid rgba(59,42,46,0.1);
-    font-size: 0.88rem;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: all 0.2s ease;
-  }
-  .category-pill:hover{ background: var(--ink); color: var(--paper); border-color: var(--ink); }
-  .category-pill.active{ background: var(--rose); color: var(--paper); border-color: var(--rose); }
-
-  /* ---------- SECTION HEADERS ---------- */
-  .section{
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 6vw 100px;
-  }
-  .section-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom: 42px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .section-head h2{ font-size: clamp(1.8rem, 3vw, 2.4rem); }
-  .section-head .tag{
-    font-size:0.85rem; color:#7a6266; max-width:320px;
-  }
-
-  /* ---------- FEATURED PICKS — pinboard masonry ---------- */
-  .board{
-    columns: 3 260px;
-    column-gap: 22px;
-  }
-  @media (max-width: 700px){ .board{ columns: 1 260px; } }
-
-  .card{
-    break-inside: avoid;
-    background: var(--paper);
-    border-radius: 14px;
-    margin-bottom: 22px;
-    padding: 16px 16px 20px;
-    box-shadow: 0 8px 22px var(--shadow);
-    position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .card:hover{ transform: translateY(-5px) rotate(-0.4deg); box-shadow: 0 16px 34px var(--shadow); }
-
-  .card .tape{
-    position:absolute;
-    top:-9px; right: 26px;
-    width: 50px; height: 18px;
-    background: rgba(138,154,126,0.5);
-    transform: rotate(3deg);
-    border-radius: 1px;
-  }
-
-  .card-img{
-    width:100%;
-    aspect-ratio: 4/3;
-    border-radius: 10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom: 14px;
-  }
-  .card-img svg{ width: 40%; height:40%; }
-  .card-img-photo{
-    background-size: cover;
-    background-position: center;
-    background-color: var(--ivory-deep);
-  }
-
-  .card h3{
-    font-size: 1.08rem;
-    margin-bottom: 6px;
-  }
-  .card p{
-    font-size: 0.86rem;
-    color: #6b5559;
-    margin-bottom: 12px;
-  }
-  .card-foot{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  .price{
-    font-family:'Fraunces', serif;
-    font-style: italic;
-    color: var(--rose);
-    font-weight: 600;
-  }
-  .shop-link{
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    border-bottom: 1.5px solid var(--ink);
-  }
-  .shop-link:hover{ color: var(--rose); border-color: var(--rose); }
-
-  .note{
-    font-family:'Caveat', cursive;
-    font-size: 1.1rem;
-    color: var(--sage);
-    display:block;
-    margin-top: 8px;
-  }
-
-  /* ---------- JOURNAL / BLOG ---------- */
-  .journal{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  @media (max-width: 800px){ .journal{ grid-template-columns: 1fr; } }
-
-  .post{
-    background: var(--ivory-deep);
-    border-radius: 16px;
-    padding: 28px;
-    display:flex;
-    flex-direction:column;
-    gap: 12px;
-  }
-  .post .date{
-    font-size: 0.76rem;
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-    color: var(--rose);
-    font-weight:700;
-  }
-  .post h3{ font-size: 1.2rem; }
-  .post p{ font-size: 0.88rem; color:#5c474b; }
-  .post .read{
-    margin-top: auto;
-    font-size: 0.82rem;
-    font-weight:700;
-  }
-
-  /* ---------- NEWSLETTER / CTA BAND ---------- */
-  .cta-band{
-    max-width: 1300px;
-    margin: 0 auto 100px;
-    padding: 0 6vw;
-  }
-  .cta-inner{
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 24px;
-    padding: 60px 6vw;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  .cta-inner h2{ font-size: clamp(1.8rem,3.4vw,2.6rem); margin-bottom:14px; }
-  .cta-inner p{ opacity:0.75; max-width:440px; margin: 0 auto 28px; font-size:0.95rem; }
-
-  .cta-form{
-    display:flex;
-    justify-content:center;
-    gap: 10px;
-    flex-wrap:wrap;
-  }
-  .cta-form input{
-    padding: 13px 18px;
-    border-radius: 100px;
-    border: none;
-    width: 280px;
-    font-family: 'Manrope', sans-serif;
-  }
-  .cta-form button{
-    background: var(--rose);
-    color: var(--paper);
-    border:none;
-    padding: 13px 26px;
-    border-radius: 100px;
-    font-weight:700;
-    cursor:pointer;
-    transition: background 0.2s ease;
-  }
-  .cta-form button:hover{ background: var(--gold); }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    padding: 50px 6vw 40px;
-    border-top: 1px solid rgba(59,42,46,0.08);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1300px;
-    margin: 0 auto;
-  }
-  .footer-links{ display:flex; gap:24px; font-size:0.86rem; }
-  .disclosure{
-    font-size: 0.74rem;
-    color: #8a7478;
-    max-width: 1300px;
-    margin: 0 auto 40px;
-    padding: 0 6vw;
-  }
-
-  @media (max-width: 600px){
-    .hero{ padding-top: 40px; }
-    .section{ padding-bottom: 70px; }
-  }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo"><span class="logo-mark"></span> Secret WishList</div>
-  <div class="nav-links">
-    <a href="#picks">Featured Finds</a>
-    <a href="#categories">Categories</a>
-    <a href="#journal">Journal</a>
-  </div>
-  <a class="nav-cta" href="https://www.instagram.com/secret_.wishlist" target="_blank" rel="noopener">Follow on IG</a>
+  <div class="nav-logo">MS</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:shirly.vinod@gmail.com" class="nav-cta">Get in Touch →</a>
 </nav>
 
-<section class="hero">
-  <div>
-    <div class="eyebrow">Curated on Amazon</div>
-    <h1>The little things that make a room feel <em>like yours.</em></h1>
-    <p>A running edit of the home & lifestyle pieces worth pinning — tested, styled, and shared one find at a time.</p>
-    <div class="hero-buttons">
-      <a class="btn-primary" href="#picks">Shop the edit</a>
-      <a class="btn-ghost" href="https://www.instagram.com/secret_.wishlist" target="_blank" rel="noopener">See it on Instagram</a>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+
+    <div class="hero-tag">Associate Director, Business Technology &amp; AI · Verizon Business</div>
+    <h1 class="hero-title">Mary<br><em>Shirly</em></h1>
+    <p class="hero-sub">I lead enterprise AI and digital transformation that customers can feel and the business can measure: from strategy and roadmap to adoption at scale.</p>
+    <div class="hero-btns">
+      <a href="#experience" class="btn-primary">See My Work →</a>
+      <a href="mailto:shirly.vinod@gmail.com" class="btn-outline">Email Me</a>
     </div>
   </div>
-  <div class="moodboard">
-    <div class="pin pin-1">
-      <div class="swatch sw-rose">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C97B84" stroke-width="1.5"><path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/></svg>
-      </div>
-      <small>morning mug era</small>
-    </div>
-    <div class="pin pin-2">
-      <div class="swatch sw-gold">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A660" stroke-width="1.5"><path d="M6 20h5"/><path d="M8 20V10l4-6 4 6v10"/><circle cx="12" cy="9" r="1.4"/></svg>
-      </div>
-      <small>desk glow ✨</small>
-    </div>
-    <div class="pin pin-3">
-      <div class="swatch sw-sage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7E" stroke-width="1.5"><rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/></svg>
-      </div>
-      <small>soft & plush</small>
-    </div>
-    <div class="pin pin-4">
-      <div class="swatch sw-ink">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#3B2A2E" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>
-      </div>
-      <small>desk edit</small>
+  <div class="hero-card">
+    <div class="hero-card-label">// What I Bring</div>
+    <p class="achievement-para">
+      I turn AI from pilots into <strong>measurable business outcomes</strong>. At Verizon Business I designed and launched an <strong>AI-powered Billing Infobot with 87% containment</strong>, lifted <strong>Top2 CSAT from 73% to 81.2%</strong>, and today lead Business Technology &amp; AI with a <strong>dual-shore team of 14 Product Owners</strong> across MyBiz, Billing and Payments.
+    </p>
+    <p class="achievement-para" style="margin-top:1rem;">
+      Next, I want to shape <strong>AI and digital strategy at the organization level</strong>: setting direction, building leaders, and scaling what works.
+    </p>
+    <div class="hero-quote">
+      <strong>"To humanize data</strong> — bridging digital insights and real-world resolutions to ensure every customer journey is heard, understood, and frictionless."
     </div>
   </div>
 </section>
 
-<div id="categories" class="categories">
-  <p style="color:#8a7478; font-size:0.85rem; padding: 12px 0;">Loading categories...</p>
-</div>
-
-<section id="picks" class="section">
-  <div class="section-head">
-    <h2>This week's featured picks</h2>
-    <div class="tag">The pieces currently sitting in my cart, my room, or both.</div>
-  </div>
-
-  <div class="board" id="product-board">
-    <p style="color:#8a7478; font-size:0.9rem;">Loading finds...</p>
+<!-- STATS -->
+<section id="stats" aria-label="Key results">
+  <div class="stats-grid">
+    <div><div class="stat-num">87%</div><div class="stat-label">containment from the AI Billing Infobot I designed and launched</div></div>
+    <div><div class="stat-num">+8.2 pts</div><div class="stat-label">Top2 CSAT, from 73% to 81.2%</div></div>
+    <div><div class="stat-num">14</div><div class="stat-label">Product Owners led across a dual-shore team</div></div>
+    <div><div class="stat-num">~20 yrs</div><div class="stat-label">across Telecom, Internet and Automotive</div></div>
   </div>
 </section>
 
-<section id="journal" class="section">
-  <div class="section-head">
-    <h2>From the journal</h2>
-    <div class="tag">Longer notes on the finds, the fails, and the everyday styling.</div>
-  </div>
-  <div class="journal">
-    <div class="post">
-      <span class="date">Latest</span>
-      <h3>5 desk pieces under ₹1,000 that don't look like it</h3>
-      <p>A round-up of the small upgrades that quietly changed how my workspace feels.</p>
-      <a class="read" href="#">Read the edit →</a>
+<!-- ABOUT -->
+<section id="about">
+  <div class="eyebrow">// About</div>
+  <div class="about-grid">
+    <div>
+      <h2>Leading the Shift to AI-Powered Experiences</h2>
+      <div class="about-body">
+        <p>Enterprises don't need more AI pilots. They need leaders who can connect AI to real customer problems, align the organization behind it, and prove the value. <strong>That is the work I do.</strong></p>
+        <p>As Associate Director of Business Technology &amp; AI at Verizon Business, I lead the move from reactive service to <strong>AI-powered, self-serve journeys</strong> for business customers. I set the roadmap, align business, engineering and design around one view of the customer, and hold every initiative to a clear metric.</p>
+        <p>My foundation in <strong>mathematics, business analytics and Lean Six Sigma</strong> means decisions start with evidence. Two decades across Telecom, Internet and Automotive, including Bharti Airtel, mean I've seen customer experience at every scale, from a branch floor to a national carrier.</p>
+        <p>I'm most energized by work where <strong>AI, product and customer experience meet at enterprise scale</strong>, and by building the leaders who will carry it forward.</p>
+      </div>
     </div>
-    <div class="post">
-      <span class="date">Reader favourite</span>
-      <h3>How I actually style a rented room</h3>
-      <p>No drilling, no repainting — just the layering tricks that make a space feel finished.</p>
-      <a class="read" href="#">Read the edit →</a>
-    </div>
-    <div class="post">
-      <span class="date">Seasonal</span>
-      <h3>The monsoon home refresh checklist</h3>
-      <p>Small swaps for the bathroom, the entryway, and the kitchen corner that gets damp first.</p>
-      <a class="read" href="#">Read the edit →</a>
+    <div>
+      <h3 style="color:rgba(255,255,255,0.5); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:1rem;">How I Lead</h3>
+      <div class="philosophy-cards">
+        <div class="phil-card">
+          <div class="phil-title">🎯 Outcomes Over Pilots</div>
+          <div class="phil-desc">No AI initiative starts without a customer problem, a business owner and a baseline metric.</div>
+        </div>
+        <div class="phil-card">
+          <div class="phil-title">🔗 One View of the Customer</div>
+          <div class="phil-desc">Align business, engineering, design and operations on shared goals, not separate backlogs.</div>
+        </div>
+        <div class="phil-card">
+          <div class="phil-title">🌱 Build Leaders, Not Dependencies</div>
+          <div class="phil-desc">Grow Product Owners into product leaders who own outcomes and make the call.</div>
+        </div>
+        <div class="phil-card">
+          <div class="phil-title">📊 Evidence at Every Step</div>
+          <div class="phil-desc">Analytics and Lean Six Sigma rigor: fix the process first, then let AI scale it.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="cta-band">
-  <div class="cta-inner">
-    <h2>Never miss a find</h2>
-    <p>One short note whenever something genuinely good gets added to the list. No spam, no daily noise.</p>
-    <form class="cta-form" onsubmit="return false;">
-      <input type="email" placeholder="you@example.com" required>
-      <button type="submit">Join the list</button>
-    </form>
+<!-- FOCUS -->
+<section id="focus" style="background:#f5f3ef;">
+  <div class="eyebrow">// Where I Create Value</div>
+  <h2>Leadership Focus Areas</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Enterprise AI Strategy</div>
+      <p class="focus-desc">Choosing the AI use cases worth funding, defining success up front, and taking them from pilot to production.</p>
+      <p class="focus-proof"><strong>Proof:</strong> AI Billing Infobot, 87% containment.</p>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Digital Transformation</div>
+      <p class="focus-desc">Moving organizations from reactive operations to self-serve digital journeys, with a Product-Led operating model.</p>
+      <p class="focus-proof"><strong>Proof:</strong> digital roadmap across MyBiz, Billing and Payments.</p>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Customer Experience Technology</div>
+      <p class="focus-desc">Turning Voice of Customer data into roadmap priorities and measurable satisfaction gains.</p>
+      <p class="focus-proof"><strong>Proof:</strong> Top2 CSAT up from 73% to 81.2%.</p>
+    </div>
   </div>
-</div>
+</section>
 
-<p class="disclosure">As an Amazon Associate, this site may earn from qualifying purchases made through the links above, at no extra cost to you. Every piece featured here is genuinely chosen and used before it's shared.</p>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="eyebrow">// Experience</div>
+  <h2>Work Experience</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-company">Verizon Business (DXP India) &amp; Verizon Consumer</div>
+      <div class="tl-role">Associate Director – Business Technology &amp; AI</div>
+      <div class="tl-dates" style="margin-bottom:0.25rem;">Previously Senior Manager – Product Development &amp; Management</div>
+      <div class="tl-dates">Sept 2020 – Present · Chennai, India</div>
+      <ul class="tl-bullets">
+        <li><strong>AI Strategy &amp; Delivery:</strong> Lead Business Technology &amp; AI for Verizon Business digital channels, owning the roadmap from use-case selection to adoption.</li>
+        <li><strong>Conversational AI:</strong> Designed and launched an AI Billing Infobot achieving <strong>87% containment</strong>, cutting call-center volume and improving first-contact resolution.</li>
+        <li><strong>Customer Outcomes:</strong> Lifted Top2 CSAT from <strong>73% to 81.2%</strong> through a go-to-market strategy built on defect management and data-driven pilot reviews.</li>
+        <li><strong>Leadership at Scale:</strong> Lead a dual-shore team of <strong>14 Product Owners</strong> (7 FTEs + 7 vendor partners) across MyBiz, Service Management, Billing &amp; Payments.</li>
+        <li><strong>Voice of Customer:</strong> Built the VoC program that turns digital behavior into roadmap priorities.</li>
+        <li><strong>Earlier at Verizon Consumer:</strong> Led Service Done Right, Spanish User Authentication, Mamba Bill Redesign and First Bill Transparency.</li>
+      </ul>
+    </div>
+    <div class="tl-item" style="margin-bottom:0;">
+      <div class="tl-company">Before Verizon</div>
+      <div class="tl-role">Foundations in Telecom, Internet &amp; Automotive CX</div>
+      <div class="earlier">
+        <div class="earlier-item">
+          <div class="tl-company">Bharti Airtel · ~10 yrs</div>
+          <p>Rose to national Program Management; led churn management and services marketing for Tamil Nadu.</p>
+        </div>
+        <div class="earlier-item">
+          <div class="tl-company">Matrimony.com · ~2 yrs</div>
+          <p>Led digital-first strategy and the Elite Matrimony relaunch; managed 75 professionals across 8 metros and Dubai.</p>
+        </div>
+        <div class="earlier-item">
+          <div class="tl-company">Sundaram Motors · ~2 yrs</div>
+          <p>Raised NPS to 960/1000 across 4 branches, leading 18 customer relationship executives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- SKILLS -->
+<section id="skills">
+  <div class="eyebrow">// Capabilities</div>
+  <h2>Skills &amp; Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">AI &amp; Digital</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Enterprise AI Strategy</span>
+        <span class="skill-tag">Conversational AI</span>
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">Digital Transformation</span>
+        <span class="skill-tag">Omnichannel CX</span>
+        <span class="skill-tag">Product-Led Operating Model</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Leadership</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Product Strategy &amp; Roadmaps</span>
+        <span class="skill-tag">Team &amp; Leader Development</span>
+        <span class="skill-tag">Executive Stakeholder Management</span>
+        <span class="skill-tag">Change Management</span>
+        <span class="skill-tag">Go-To-Market</span>
+        <span class="skill-tag">Vendor Partnerships</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data &amp; Methods</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Business Analytics</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">GCP BigQuery</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Lean Six Sigma</span>
+        <span class="skill-tag">SAFe / Agile</span>
+        <span class="skill-tag">Design Thinking</span>
+      </div>
+    </div>
+    <div class="skill-group" style="grid-column: span 3;">
+      <div class="skill-group-title">Education &amp; Certifications</div>
+      <ul class="cert-list" style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.25rem 2rem;">
+        <li>MS Business Analytics — BITS Pilani (2026)</li>
+        <li>BSc Mathematics — Stella Maris College (2001)</li>
+        <li>Oracle Cloud Infrastructure 2023 AI Foundations</li>
+        <li>SAFe Product Owner / Product Manager (POPM)</li>
+        <li>Six Sigma Lean Projects</li>
+        <li>Design Thinking Foundations</li>
+        <li>Digital &amp; Agile Marketing</li>
+        <li>Agile Champion</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="eyebrow">// Let's Connect</div>
+  <h2>Get in Touch</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>Always glad to talk with leaders building AI-powered products and customer experiences, and with anyone shaping digital transformation. Based in Chennai, India.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:shirly.vinod@gmail.com">
+          <span class="contact-link-icon">✉️</span>
+          shirly.vinod@gmail.com
+        </a>
+        <a class="contact-link" href="tel:+918610272906">
+          <span class="contact-link-icon">📞</span>
+          +91 86102 72906
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/shirly-s" target="_blank">
+          <span class="contact-link-icon">🔗</span>
+          linkedin.com/in/shirly-s
+        </a>
+      </div>
+    </div>
+    <div>
+      <form class="contact-form" id="contact-form">
+        <div class="form-field">
+          <label class="form-label" for="cf-name">Your Name</label>
+          <input class="form-input" id="cf-name" required placeholder="e.g. Priya Rajan" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="cf-email">Email</label>
+          <input class="form-input" id="cf-email" type="email" required placeholder="you@company.com" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="cf-msg">Message</label>
+          <textarea class="form-textarea" id="cf-msg" required placeholder="I'd love to connect about..."></textarea>
+        </div>
+        <button class="form-btn" type="submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="logo"><span class="logo-mark"></span> Secret WishList</div>
-  <div class="footer-links">
-    <a href="https://www.instagram.com/secret_.wishlist" target="_blank" rel="noopener">Instagram</a>
-    <a href="#">Collab with us</a>
-    <a href="#">Privacy</a>
-  </div>
+  © 2026 <strong>Mary Shirly</strong> · Digital Transformation &amp; AI Leader · Chennai, India
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <script>
-  const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRZ_JklenKVGAJ44RAE9Xu9-LFF7uxaDsYVy_TeOpb6hKI8jPyH0Bj2bOBsXmU2Bs6CTCylfC7dKcJ3/pub?gid=0&single=true&output=csv';
-
-  const ICONS = {
-    mug: '<path d="M8 3h8v4a4 4 0 0 1-4 4 4 4 0 0 1-4-4V3Z"/><path d="M12 11v6"/><path d="M9 20h6"/>',
-    mat: '<rect x="4" y="9" width="16" height="10" rx="2"/><path d="M4 9l8-5 8 5"/>',
-    lamp: '<path d="M6 20h5"/><path d="M8 20V10l4-6 4 6v10"/><circle cx="12" cy="9" r="1.4"/>',
-    organiser: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="7" r="0.6" fill="currentColor"/>',
-    throw: '<path d="M4 19l6-14 6 14"/><path d="M7 13h6"/><path d="M17 19V9l4 3"/>',
-    dish: '<path d="M12 2v6"/><path d="M12 22v-6"/><circle cx="12" cy="12" r="4"/>',
-    default: '<circle cx="12" cy="12" r="8"/>'
-  };
-
-  const STROKE = {
-    'sw-rose': '#C97B84', 'sw-sage': '#8A9A7E', 'sw-gold': '#C9A660', 'sw-ink': '#3B2A2E'
-  };
-
-  let allProducts = [];
-
-  function renderProducts(filter){
-    const board = document.getElementById('product-board');
-    const list = filter === 'all' ? allProducts : allProducts.filter(p => p.category === filter);
-
-    if(list.length === 0){
-      board.innerHTML = "<p style=\"color:#8a7478; font-size:0.9rem;\">No finds in this category yet — check back soon.</p>";
-      return;
-    }
-
-    board.innerHTML = list.map(p => {
-      const swatch = p.swatch || 'sw-rose';
-      const stroke = STROKE[swatch] || '#C97B84';
-      const iconPath = ICONS[p.icon] || ICONS.default;
-      const note = p.note ? `<span class="note">${p.note}</span>` : '';
-      const imgBlock = p.image
-        ? `<div class="card-img card-img-photo" style="background-image:url('${p.image}')"></div>`
-        : `<div class="card-img ${swatch}"><svg viewBox="0 0 24 24" fill="none" stroke="${stroke}" stroke-width="1.4">${iconPath}</svg></div>`;
-      return `
-        <div class="card">
-          <div class="tape"></div>
-          ${imgBlock}
-          <h3>${p.name}</h3>
-          <p>${p.description}</p>
-          <div class="card-foot">
-            <span class="price">from ${p.price}</span>
-            <a class="shop-link" href="${p.link}" target="_blank" rel="noopener sponsored">Shop</a>
-          </div>
-          ${note}
-        </div>`;
-    }).join('');
-  }
-
-  function renderCategories(){
-    const container = document.getElementById('categories');
-    const cats = [...new Set(allProducts.map(p => (p.category || '').trim()).filter(Boolean))];
-
-    let html = `<div class="category-pill active" data-cat="all">All</div>`;
-    html += cats.map(c => `<div class="category-pill" data-cat="${c}">${c}</div>`).join('');
-    container.innerHTML = html;
-
-    document.querySelectorAll('.category-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        renderProducts(pill.dataset.cat);
-      });
-    });
-  }
-
-  Papa.parse(SHEET_CSV_URL, {
-    download: true,
-    header: true,
-    skipEmptyLines: true,
-    complete: (results) => {
-      allProducts = results.data.filter(p => p.name);
-      renderCategories();
-      renderProducts('all');
-    },
-    error: () => {
-      document.getElementById('product-board').innerHTML =
-        "<p style=\"color:#8a7478; font-size:0.9rem;\">Couldn't load the product sheet — check the Sheet is set to \"Anyone with the link can view.\"</p>";
-    }
+  // Opens the visitor's email app with the message filled in (no server needed on GitHub Pages)
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value.trim();
+    var email = document.getElementById('cf-email').value.trim();
+    var msg = document.getElementById('cf-msg').value.trim();
+    var subject = encodeURIComponent('Hello from ' + name);
+    var body = encodeURIComponent(msg + '\n\n' + name + ' (' + email + ')');
+    window.location.href = 'mailto:shirly.vinod@gmail.com?subject=' + subject + '&body=' + body;
   });
 </script>
-
 </body>
 </html>
